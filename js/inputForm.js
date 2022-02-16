@@ -75,3 +75,14 @@ password.addEventListener('input', function () {
       errorPwd.textContent = "Invalid Password";
    }
 });
+
+function myFunction() {
+   var x = document.getElementById('pwd');
+
+   if(x.type==="password") {
+      x.type="text";
+   }
+   else {
+      x.type="password";
+   }
+}
