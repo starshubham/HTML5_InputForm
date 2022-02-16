@@ -55,3 +55,19 @@ mobileInput.addEventListener('input', function () {
       errorMobile.textContent = " Invalid Mobile Number"
    }
 });
+
+/* UC4:- As a User need to follow pre-defined Password rules. 
+         Rule1 – minimum 8 Characters - NOTE – All rules must be passed.           
+*/
+
+const password = document.querySelector("#pwd");
+const errorPwd = document.querySelector(".pwd-error");
+password.addEventListener('input', function () {
+   let pwdRegex = RegExp("^.{8,}$");
+   if (pwdRegex.test(password.value)) {
+      errorPwd.textContent = "";
+   }
+   else {
+      errorPwd.textContent = "Invalid Password";
+   }
+});
