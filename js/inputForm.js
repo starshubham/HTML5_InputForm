@@ -23,3 +23,19 @@ text.addEventListener('input', function ()
       textError.textContent = " Invalid Name";
    }
 });
+
+/* UC2:- As a User need to enter a valid email
+         - E.g. abc.xyz@bl.co.in - Email has 3 mandatory parts (abc, bl & co) and 2 optional (xyz & in) 
+         with precise @ and . positions. */
+
+const emailInput = document.querySelector("#email");
+const errorEmail = document.querySelector(".email-error");
+emailInput.addEventListener('input', function () {
+   let emailRegex = RegExp('^(abc).?[a-z]{3,}[@](bl).?(co).?[a-z]{2,}$');
+   if (emailRegex.test(emailInput.value)) {
+      errorEmail.textContent = "";
+   }
+   else {
+      errorEmail.textContent = " Invalid Email"
+   }
+});
