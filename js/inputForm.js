@@ -57,13 +57,17 @@ mobileInput.addEventListener('input', function () {
 });
 
 /* UC4:- As a User need to follow pre-defined Password rules. 
-         Rule1 – minimum 8 Characters - NOTE – All rules must be passed.           
+         Rule1 – minimum 8 Characters - NOTE – All rules must be passed.
+   UC5:- Rule1 – minimum 8 Characters. 
+         Rule2 – Should have at least 1 Upper Case.
+         Rule3 – Should have at least 1 numeric number in the password.
+         Rule4 – Has exactly 1 Special Character - NOTE – All rules must be passed.           
 */
 
 const password = document.querySelector("#pwd");
 const errorPwd = document.querySelector(".pwd-error");
 password.addEventListener('input', function () {
-   let pwdRegex = RegExp("^.{8,}$");
+   let pwdRegex = RegExp("^[A-Z]{1}[A-Z a-z]{5,}([!*@#$%^&+=]{1}[0-9]{1,})$");  //Shubham@1234
    if (pwdRegex.test(password.value)) {
       errorPwd.textContent = "";
    }
